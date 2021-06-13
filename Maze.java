@@ -1,4 +1,4 @@
-package edu.smg;
+package maze;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,11 +11,11 @@ public class Maze {
 	public Position start;
 
 	public Maze(String filePath) throws FileNotFoundException {
-
+		
 		Scanner in = new Scanner(new File(filePath));
 		int rows = Integer.parseInt(in.nextLine());
 		this.maze = new int[rows][];
-
+	
 		for (int i = 0; i < rows; i++) {
 			String line = in.nextLine();
 			String[] numbers = line.split(", ");
@@ -24,6 +24,7 @@ public class Maze {
 				this.maze[i][j] = Integer.parseInt(numbers[j]);
 			}
 		}
+	
 		this.start = new Position(Integer.parseInt(in.nextLine()), Integer.parseInt(in.nextLine()));
 	}
 }
