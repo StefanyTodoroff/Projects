@@ -1,17 +1,18 @@
-package edu.smg;
+package maze;
 
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 public class MazeApp {
-
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		JFrame frame = new JFrame();
 		frame.setSize(400, 400);
-		frame.setLocationRelativeTo(null);
 		frame.add(new MazeControll());
 		frame.setTitle("Maze");
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
 
 }
+
