@@ -1,38 +1,46 @@
-package edu.smg;
+package maze;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class MazeControll extends JPanel{
+public class MazeControll extends JPanel {
 	private MazePanel mazePanel = new MazePanel();
-	private JButton findPathBtn = new JButton("Find Path");
-	private JButton clearPathBtn = new JButton("Clear Path");
 	
+	private JButton findPathBtn = new JButton("Find Path");
+	private JButton cleanPathBtn = new JButton("Reset");
 	
 	public MazeControll(){
+		
 		setLayout(new BorderLayout());
 		add(mazePanel, BorderLayout.CENTER);
-		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.add(findPathBtn);
-		buttonPanel.add(clearPathBtn);
+		buttonPanel.add(cleanPathBtn);
 		add(buttonPanel, BorderLayout.SOUTH);
 		
-		findPathBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		findPathBtn.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
 				mazePanel.findPath();
 			}
+			
 		});
 		
-		clearPathBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				mazePanel.clearPath();
+		cleanPathBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				mazePanel.cleanPath();
 			}
+			
 		});
+		
 	}
 	
+
 }
